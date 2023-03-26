@@ -104,6 +104,7 @@ const App = () => {
               </h2>
             </div>
             <button
+              disabled={progress > 0}
               onClick={downloadPost}
               className="bg-stone-800 font-light p-2 rounded-sm transition-all duration-300 hover:text-primary"
             >
