@@ -39,6 +39,7 @@ const App = () => {
 
   const downloadPost = async () => {
     try {
+      setProgress(1);
       const res = await axios.post(
         `${process.env.REACT_APP_API}/media/download`,
         {
