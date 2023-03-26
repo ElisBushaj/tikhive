@@ -92,7 +92,7 @@ const App = () => {
             <div className="aspect-[9/12] w-full relative flex items-center">
               <img
                 src={post.cover}
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-cover object-center img-noselect"
                 alt=""
               />
             </div>
