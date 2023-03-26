@@ -76,7 +76,7 @@ const App = () => {
             <div className="flex space-x-2 justify-center items-center flex-row w-full p-2">
               <img
                 src={post.avatar}
-                className="h-10 aspect-square rounded-full"
+                className="h-10 aspect-square rounded-full img-noselect"
                 alt=""
               />
               <div className="w-full h-full flex flex-row items-center justify-between">
