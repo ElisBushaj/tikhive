@@ -13,6 +13,7 @@ const App = () => {
   const [post, setPost] = useState();
   const [loading, setLoading] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [downloading, setDownloading] = useState(false);
 
   const exitPost = () => {
     setPost(null);
@@ -39,7 +40,7 @@ const App = () => {
 
   const downloadPost = async () => {
     try {
-      setProgress(1);
+      setDownloading(true);
       const res = await axios.post(
         `${process.env.REACT_APP_API}/media/download`,
         {
@@ -58,9 +59,10 @@ const App = () => {
       console.log(error);
     } finally {
       setProgress(0);
+      setDownloading(false);
     }
   };
-  if (progress > 0) {
+  if (downloading) {
     return <Progress progress={progress} />;
   }
 
@@ -104,7 +106,7 @@ const App = () => {
               </h2>
             </div>
             <button
-              disabled={progress > 0}
+              disabled={downloading}
               onClick={downloadPost}
               className="bg-stone-800 font-light p-2 rounded-sm transition-all duration-300 hover:text-primary"
             >
