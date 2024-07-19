@@ -19,7 +19,7 @@ Before you begin, ensure you have met the following requirements:
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/tikhive-frontend.git
+   git clone https://github.com/ElisBushaj/tikhive.git
    cd tikhive-frontend
    ```
 
