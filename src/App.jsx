@@ -34,19 +34,6 @@ const App = () => {
 			setPost(res.data);
 		} catch (error) {
 			console.log(error);
-			// If the request fails, send a request to the second backend
-			try {
-				const res = await axios.post(
-					`${process.env.REACT_APP_SECOND_API}/media`,
-					{
-						videoUrl: postId,
-					},
-					{ responseType: "json" }
-				);
-				setPost(res.data);
-			} catch (error) {
-				console.log(error);
-			}
 		}
 		setLoading(false);
 	};
@@ -72,27 +59,6 @@ const App = () => {
 			return download(res.data, post.id, res.data.type);
 		} catch (error) {
 			console.log(error);
-			// If the request fails, send a request to the second backend
-			try {
-				const res = await axios.post(
-					`${process.env.REACT_APP_SECOND_API}/media/download`,
-					{
-						videoUrl: postId,
-					},
-					{
-						responseType: "blob",
-						onDownloadProgress: (event) => {
-							const progress = Math.round(
-								(event.loaded / event.total) * 100
-							);
-							setProgress(progress);
-						},
-					}
-				);
-				return download(res.data, post.id, res.data.type);
-			} catch (error) {
-				console.log(error);
-			}
 		} finally {
 			setProgress(0);
 			setDownloading(false);
