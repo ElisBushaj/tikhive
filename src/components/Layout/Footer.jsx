@@ -3,11 +3,11 @@ import pg from "../../../package.json"; // adjust the path as needed
 const TOOLS = [
 	{
 		name: "TubeHive - YouTube MP3 Downloader",
-		url: "/",
+		url: "https://tubehive.netlify.app",
 	},
 	{
 		name: "TikHive - TikTok Video Downloader",
-		url: "https://tikhive.netlify.app/",
+		url: "/",
 	},
 ];
 
