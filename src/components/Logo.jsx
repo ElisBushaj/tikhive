@@ -1,15 +1,18 @@
+import logo1 from "../assets/logo1.png";
+import logo2 from "../assets/logo2.png";
+
 const Logo = () => {
   const name = "TikHive";
   return (
     <div className="flex flex-col select-none">
       <div className="relative flex justify-center items-center w-full">
         <img
-          src={require("../assets/logo1.png")}
+          src={logo1}
           className="object-contain w-16 aspect-square animate-animate absolute"
           alt=""
         />
         <img
-          src={require("../assets/logo2.png")}
+          src={logo2}
           className="object-contain w-16 aspect-square"
           alt=""
         />
